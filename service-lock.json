@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "purpose": "Exact local service and dependency-lock identities; not trusted admission",
+  "paths_relative_to": "skill-package",
+  "files": {
+    "scripts/status_service.py": "316fa1a6f61822075cb96f26cae58898c40880b64887aa1d7e8fbb4ee1dd5e47",
+    "requirements.lock": "0a2dc122bd9762b39806f5998461b9943a3aa52762688f08d6ecc205f5ae1317"
+  }
+}

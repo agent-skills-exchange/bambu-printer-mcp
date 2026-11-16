@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "features": ["guidance", "offline-status"],
+  "platforms": [
+    {"id": "instruction-only", "os": "any", "distribution": "any", "version": {"scheme": "none", "constraint": ""}, "architectures": ["any"], "applies_to": ["guidance"], "support": {"status": "declared", "evidence": []}},
+    {"id": "ubuntu-2604", "os": "linux", "distribution": "ubuntu", "version": {"scheme": "exact", "constraint": "26.04"}, "architectures": ["x86_64"], "applies_to": ["offline-status"], "support": {"status": "declared", "evidence": []}}
+  ],
+  "hosts": [],
+  "software": [
+    {"id": "python", "kind": "runtime", "version": {"scheme": "exact", "constraint": "3.14.4"}, "required": true, "applies_to": ["offline-status"], "platforms": ["ubuntu-2604"], "installation": {"method": "preinstalled", "package": "python3", "source": "https://www.python.org/", "instructions": "README.md"}},
+    {"id": "mcp", "kind": "library", "version": {"scheme": "pep440", "constraint": "==1.30.0"}, "required": true, "applies_to": ["offline-status"], "platforms": ["ubuntu-2604"], "installation": {"method": "package-manager", "package": "mcp", "source": "https://pypi.org/project/mcp/1.30.0/", "instructions": "README.md"}},
+    {"id": "paho-mqtt", "kind": "library", "version": {"scheme": "pep440", "constraint": "==2.1.0"}, "required": true, "applies_to": ["offline-status"], "platforms": ["ubuntu-2604"], "installation": {"method": "package-manager", "package": "paho-mqtt", "source": "https://pypi.org/project/paho-mqtt/2.1.0/", "instructions": "README.md"}},
+    {"id": "uv", "kind": "tool", "version": {"scheme": "exact", "constraint": "0.9.10"}, "required": false, "applies_to": ["offline-status"], "platforms": ["ubuntu-2604"], "installation": {"method": "preinstalled", "package": "uv", "source": "https://docs.astral.sh/uv/", "instructions": "README.md"}}
+  ],
+  "skills": [],
+  "network": [
+    {"id": "package-index", "destination": "https://pypi.org", "purpose": "Optional dependency installation only; not offline runtime traffic", "required": false, "applies_to": ["offline-status"]},
+    {"id": "package-files", "destination": "https://files.pythonhosted.org", "purpose": "Optional hash-pinned artifact download during installation only", "required": false, "applies_to": ["offline-status"]}
+  ],
+  "credentials": [],
+  "lockfiles": [
+    {"path": "requirements.lock", "sha256": "0a2dc122bd9762b39806f5998461b9943a3aa52762688f08d6ecc205f5ae1317", "format": "pip-requirements-with-hashes", "applies_to": ["offline-status"]}
+  ]
+}
