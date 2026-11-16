@@ -1,0 +1,3 @@
+# Direct optional dependencies for this skill's status-only service.
+mcp==1.30.0
+paho-mqtt==2.1.0
